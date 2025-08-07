@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>🍵 ChaiMap - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #F4A460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background steam */
+        .steam {
+            position: absolute;
+            width: 4px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: steam-rise 3s ease-in-out infinite;
+        }
+
+        .steam:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .steam:nth-child(2) {
+            left: 20%;
+            animation-delay: 0.5s;
+        }
+
+        .steam:nth-child(3) {
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .steam:nth-child(4) {
+            left: 90%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes steam-rise {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+         .logo-container {
+            margin-bottom: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .main-text {
+            color: #8B4513;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(139, 69, 19, 0.3);
+            }
+        }
+
+        .subtitle {
+            color: #D2691E;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .description {
+            color: #8B4513;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .notify-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border: 2px solid #D2691E;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .email-input:focus {
+            border-color: #8B4513;
+        }
+
+        .notify-btn {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+        }
+
+        .chai-icons {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .main-text {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+            
+            .notify-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated steam effects -->
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+
+    <div class="container">
+        <div class="chai-icons">☕</div>
+        
+        <div class="logo-container">
+          <img src="./Image/logo.png" class="logo" alt="" srcset="">
+        </div>
+        
+        <h1 class="main-text">Something Special</h1>
+        <h2 class="subtitle">is brewing...</h2>
+        
+        <p class="description">
+            For all the chai lovers out there, we're crafting something extraordinary. 
+            A perfect blend of tradition and innovation awaits you. 
+            Get ready to discover your new favorite chai experience!
+        </p>
+        
+        <div class="notify-container">
+            <input type="email" class="email-input" placeholder="Enter your email for updates" id="emailInput">
+            <button class="notify-btn" onclick="notifyMe()">Notify Me</button>
+        </div>
+    </div>
+
+    <script>
+        function notifyMe() {
+            const email = document.getElementById('emailInput').value;
+            if (email) {
+                alert('Thank you! We\'ll notify you when we launch. ☕');
+                document.getElementById('emailInput').value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        }
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
